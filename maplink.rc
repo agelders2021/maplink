@@ -1,0 +1,39 @@
+#include <windows.h>
+
+// ── Application manifest (enables ComCtl32 v6 + visual styles) ───────────────
+CREATEPROCESS_MANIFEST_RESOURCE_ID RT_MANIFEST "maplink.manifest"
+
+// ── Version info ──────────────────────────────────────────────────────────────
+#define VER_MAJOR   1
+#define VER_MINOR   0
+#define VER_PATCH   0
+#define VER_BUILD   0
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION     VER_MAJOR, VER_MINOR, VER_PATCH, VER_BUILD
+PRODUCTVERSION  VER_MAJOR, VER_MINOR, VER_PATCH, VER_BUILD
+FILEFLAGSMASK   VS_FFI_FILEFLAGSMASK
+FILEFLAGS       0
+FILEOS          VOS_NT_WINDOWS32
+FILETYPE        VFT_APP
+FILESUBTYPE     VFT2_UNKNOWN
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"    // Language: US English, Codepage: Unicode
+        BEGIN
+            VALUE "CompanyName",      "RigExecutive"
+            VALUE "FileDescription",  "MapLink - Map Link Generator for Email"
+            VALUE "FileVersion",      "1.0.0.0"
+            VALUE "InternalName",     "maplink"
+            VALUE "LegalCopyright",   "Copyright (C) 2026"
+            VALUE "OriginalFilename", "maplink.exe"
+            VALUE "ProductName",      "MapLink"
+            VALUE "ProductVersion",   "1.0.0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0409, 1200   // US English, Unicode
+    END
+END
